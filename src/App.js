@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import Starships from './pages/Starships/Starships';
+import { Route, Routes } from 'react-router-dom';
+import StarshipDetails from './pages/Starship/StarshipDetails';
+import NavBar from './components/Nav/Nav';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar />
+      <Routes>
+        <Route path='/starship' element={<StarshipDetails />}/>
+        <Route path='/starships' element={<Starships/>}/>
+      </Routes>
     </div>
   );
 }
